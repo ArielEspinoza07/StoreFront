@@ -2037,20 +2037,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-content white-text"
   }, [_c('span', {
     staticClass: "card-title"
-  }, [_vm._t("name")], 2), _vm._v(" "), _c('p', [_vm._t("address")], 2)]), _vm._v(" "), _vm._m(0)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_vm._t("name")], 2), _vm._v(" "), _c('p', [_vm._t("address")], 2)]), _vm._v(" "), _c('div', {
     staticClass: "card-action"
-  }, [_c('a', {
-    attrs: {
-      "href": "#update-store"
-    }
-  }, [_vm._v("Update Store")]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("Articulos")])])
-}]}
+  }, [_vm._t("actions")], 2)])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

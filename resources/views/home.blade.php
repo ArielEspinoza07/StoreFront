@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 @section('content')
-    <div id="app" class="container">
+    <div id="app" class="container" style="margin-top: 20px">
 
         <a class="waves-effect waves-light btn" href="#create-store">Create Store</a>
 
@@ -31,6 +31,9 @@
                 <template slot="name">@{{ store.name }}</template>
                 <template slot="address">@{{ store.address }}</template>
                 <template slot="id">@{{ store.id }}</template>
+                <template slot="actions">
+                    <a :href="'/store/'+store.id">Show Store</a>
+                </template>
             </store-component>
         </div>
     </div>

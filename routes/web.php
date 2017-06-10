@@ -16,9 +16,14 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix'  =>  'stores'],function(){
-    Route::get('/'                  , ['as'   => 'stores.index'      ,'uses'    =>  'StoreController@index']);
-    Route::get('/{id}'              , ['as'   => 'stores.show'       ,'uses'    =>  'StoreController@show']);
-    Route::post('/'                 , ['as'   => 'stores.store'      ,'uses'    =>  'StoreController@store']);
-    Route::put('/{id}'              , ['as'   => 'stores.update'     ,'uses'    =>  'StoreController@update']);
-    Route::get('/{id}/articles'     , ['as'   => 'stores.show'       ,'uses'    =>  'StoreController@articlesStore']);
+    Route::get('/'                  , ['as'   => 'stores.index'         ,'uses'    =>  'StoreController@index']);
+    Route::get('/{id}'              , ['as'   => 'stores.show'          ,'uses'    =>  'StoreController@show']);
+    Route::post('/'                 , ['as'   => 'stores.store'         ,'uses'    =>  'StoreController@store']);
+    Route::put('/{id}'              , ['as'   => 'stores.update'        ,'uses'    =>  'StoreController@update']);
+    Route::get('/{id}/articles'     , ['as'   => 'stores.articles.show' ,'uses'    =>  'StoreController@articlesStore']);
+    Route::delete('/{id}'           , ['as'   => 'stores.delete'        ,'uses'    =>  'StoreController@delete']);
+});
+
+Route::group(['prefix'  =>  'store'],function(){
+    Route::get('/{id}'              , ['as'   => 'stores.show'       ,'uses'    =>  'StoreController@showStore']);
 });

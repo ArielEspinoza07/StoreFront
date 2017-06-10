@@ -17,8 +17,8 @@
     </head>
     <body>
     <nav>
-        <div class="nav-wrapper cyan ">
-            <a href="#!" class="brand-logo">Super Zapatos</a>
+        <div class="nav-wrapper cyan darken-1 ">
+            <a href="/" class="brand-logo">Super Zapatos</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="sass.html">Sass</a></li>
@@ -35,7 +35,7 @@
         </div>
     </nav>
     @yield('content')
-    <footer class="page-footer cyan">
+    <footer class="page-footer cyan darken-1">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">

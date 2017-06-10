@@ -20,4 +20,28 @@ class StoreController extends Controller
 
         return response()->json($this->saveStores($formRequest));
     }
+
+    public function show($id)
+    {
+        return response()->json($this->showStore($id));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $formRequest    =   $request->except('_token');
+
+        return response()->json($this->updateStores($id,$formRequest));
+    }
+
+    public function delete($id)
+    {
+        return response()->json($this->deleteStore($id));
+    }
+
+    public function showStore($id)
+    {
+        $store  =   $this->showStoreArticles($id);
+
+        return view('store')->with(compact('store'));
+    }
 }

@@ -6,8 +6,7 @@
                 <p><slot name="address"></slot></p>
             </div>
             <div class="card-action">
-                <a href="#update-store"  >Update Store</a>
-                <a href="#">Articulos</a>
+                <slot name="actions"></slot>
             </div>
         </div>
     </div>
