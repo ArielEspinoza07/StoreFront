@@ -2,8 +2,6 @@
 @section('content')
     <div id="app" class="container" style="margin-top: 20px">
 
-        <a class="waves-effect waves-light btn" href="#create-store">Create Store</a>
-
         <div id="create-store" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h6>Create Store </h6>
@@ -35,6 +33,12 @@
                     <a :href="'/store/'+store.id">Show Store</a>
                 </template>
             </store-component>
+        </div>
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large teal lighten-1" href="#create-store">
+                <i class="large material-icons">mode_edit</i>
+            </a>
         </div>
     </div>
 @endsection

@@ -11,7 +11,10 @@
                             <div class="card small blue-grey darken-1">
                                 <div class="card-content white-text">
                                     <span class="card-title">{{ isset($article) ? $article->name : 'N/A' }}</span>
-                                    <p>{{isset($article) ? $article->description : 'N/A'}}</p>
+                                    <p>Description: {{isset($article) ? $article->description : 'N/A'}}</p>
+                                    <p>Price: {{isset($article) ? $article->price : 'N/A'}}</p>
+                                    <p>Total in shelf: {{isset($article) ? $article->total_in_shelf : 'N/A'}}</p>
+                                    <p>Total in vault: {{isset($article) ? $article->total_in_vault : 'N/A'}}</p>
                                 </div>
                                 <div class="card-action">
                                     <a href="#">This is a link</a>
@@ -23,11 +26,39 @@
                 </div>
             </div>
         </div>
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large teal lighten-1" href="#create-article">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+        </div>
+
+        <div id="create-article" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h6>Create Article </h6>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  id="name" type="text" v-model="newStore.name" class="validate">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="address" type="text" v-model="newStore.address" class="validate">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light" @click="saveStore">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat red lighten-4">Close</a>
+            </div>
+        </div>
     </div>
 @endsection
 @section('js')
     <script>
         $(".button-collapse").sideNav();
-        $('#create-store').modal();
+        $('#create-article').modal();
     </script>
 @endsection

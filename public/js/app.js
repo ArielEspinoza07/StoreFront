@@ -823,7 +823,9 @@ var app = new Vue({
 
     data: {
         stores: [],
-        newStore: {}
+        articles: [],
+        newStore: {},
+        newArticle: {}
     },
 
     created: function created() {

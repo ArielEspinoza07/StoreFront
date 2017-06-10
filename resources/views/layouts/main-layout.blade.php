@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Laravel</title>
+        <title>Stores App</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -17,21 +17,13 @@
     </head>
     <body>
     <nav>
-        <div class="nav-wrapper cyan darken-1 ">
-            <a href="/" class="brand-logo">Super Zapatos</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
+        <div class="nav-wrapper cyan darken-1">
+            <a href="/" class="brand-logo center">Stores App</a>
+            {{--<ul id="nav-mobile" class="left hide-on-med-and-down">--}}
+                {{--<li><a href="sass.html">Sass</a></li>--}}
+                {{--<li><a href="badges.html">Components</a></li>--}}
+                {{--<li><a href="collapsible.html">JavaScript</a></li>--}}
+            {{--</ul>--}}
         </div>
     </nav>
     @yield('content')
