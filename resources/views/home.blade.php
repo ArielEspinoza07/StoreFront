@@ -20,7 +20,9 @@
             </div>
         </div>
         <div class="row">
-
+            <ul v-for="store in stores">
+                <li>@{{ store.name }}</li>
+            </ul>
         </div>
     </div>
 @endsection

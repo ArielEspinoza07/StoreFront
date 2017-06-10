@@ -794,11 +794,26 @@ window.Vue = __webpack_require__(37);
 Vue.component('example', __webpack_require__(34));
 
 var app = new Vue({
-  el: '#app',
-  data: {
-    stores: []
-  },
-  mounted: function mounted() {}
+    el: '#app',
+
+    created: function created() {
+        this.getStoresApi();
+    },
+
+    data: {
+        stores: []
+    },
+
+    methods: {
+        getStoresApi: function getStoresApi() {
+            axios.get('/stores').then(function (response) {
+                console.log(response.data.stores);
+                this.stores = response.data.stores;
+            });
+        }
+    },
+
+    mounted: function mounted() {}
 });
 
 /***/ }),
@@ -31668,7 +31683,7 @@ var Component = __webpack_require__(35)(
   /* cssModules */
   null
 )
-Component.options.__file = "/var/www/Projects/StoreFront/resources/assets/js/components/Example.vue"
+Component.options.__file = "C:\\www\\StoreFront\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 

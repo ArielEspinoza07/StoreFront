@@ -17,12 +17,27 @@ window.Vue = require('vue');
 
 Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
+var app = new Vue({
     el: '#app',
+
+    created:function(){
+        this.getStoresApi();
+    },
+
     data:{
         stores:[]
     },
-    mounted(){
+
+    methods : {
+        getStoresApi:function () {
+            axios.get('/stores').then(function (response) {
+                console.log(response.data.stores);
+                this.stores =   response.data.stores;
+            });
+        }
+    },
+
+    mounted:function(){
 
     }
 });
