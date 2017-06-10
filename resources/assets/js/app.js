@@ -5,10 +5,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-require('axios');
-window.Vue = require('vue');
-
+// require('./bootstrap');
+// require('./axios');
+window.Vue      = require('vue');
+window.axios    = require('axios');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -16,28 +16,55 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+var storeComponent = Vue.component('store-component', require('./components/store.vue'));
 
-var app = new Vue({
+const app = new Vue({
     el: '#app',
+
+    data:{
+        stores:[],
+        newStore:{}
+    },
 
     created:function(){
         this.getStoresApi();
     },
 
-    data:{
-        stores:[]
-    },
-
     methods : {
         getStoresApi:function () {
-            axios.get('/stores').then(function (response) {
-                console.log(response.data.stores);
-                this.stores =   response.data.stores;
-            });
+            axios.get('/stores')
+                .then(function (response) {
+                    app.stores  =   response.data.stores;
+                    console.log('Successfully');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+        saveStore:function () {
+            var dataRequest = {
+                name:app.newStore.name,
+                address:app.newStore.address
+            };
+            console.log(dataRequest);
+            axios.post('/stores',dataRequest)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            app.newStore={};
+            this.getStoresApi();
         }
     },
 
     mounted:function(){
 
+    },
+    components:{
+        storeComponent
     }
 });
+
+

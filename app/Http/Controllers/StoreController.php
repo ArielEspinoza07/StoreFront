@@ -13,4 +13,11 @@ class StoreController extends Controller
     {
         return response()->json($this->getStores(),200);
     }
+
+    public function store(Request $request)
+    {
+        $formRequest    =   $request->except('_token');
+
+        return response()->json($this->saveStores($formRequest));
+    }
 }

@@ -21,7 +21,23 @@ trait StoreTrait
         if(is_array($response) && array_key_exists('status',$response) && $response['status'] == 'ok')
         {
             return $response['result'];
-        }dd($response);
+        }
+
+        return $response['result'];
+    }
+
+    protected function saveStores($formParams)
+    {
+        $options    =   array(
+            'auth'          =>  array(env('STORE_API_USER'),env('STORE_API_PW')),
+            'form_params'   =>  $formParams
+        );
+        $response   =   $this->guzzle->request(env('STORE_API_URL'), 'v1/services/stores','POST',$options);
+
+        if(is_array($response) && array_key_exists('status',$response) && $response['status'] == 'ok')
+        {
+            return $response['result'];
+        }
 
         return $response['result'];
     }
