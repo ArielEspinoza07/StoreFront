@@ -76,7 +76,7 @@
                 <li><a class="btn-floating yellow  lighten-1" href="#edit-store"><i class="material-icons">create</i></a></li>
                 <li><a class="btn-floating green  lighten-1" href="#create-article"><i class="material-icons">insert_invitation</i></a></li>
                 <li><a href="/store/{{$store->id}}/delete" class="btn-floating red  lighten-1"><i class="material-icons">delete</i></a></li>
-                <li><a href="{{URL::previous()}}" class="btn-floating grey   lighten-1"><i class="material-icons">reply</i></a></li>
+                <li><a href="/" class="btn-floating grey   lighten-1"><i class="material-icons">reply</i></a></li>
             </ul>
         </div>
 
