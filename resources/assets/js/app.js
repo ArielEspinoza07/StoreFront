@@ -9,6 +9,7 @@
 // require('./axios');
 window.Vue      = require('vue');
 window.axios    = require('axios');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -23,9 +24,7 @@ const app = new Vue({
 
     data:{
         stores:[],
-        articles:[],
-        newStore:{},
-        newArticle:{}
+        newStore:{}
     },
 
     created:function(){
@@ -37,7 +36,6 @@ const app = new Vue({
             axios.get('/stores')
                 .then(function (response) {
                     app.stores  =   response.data.stores;
-                    console.log('Successfully');
                 })
                 .catch(function (error) {
                     console.log(error);

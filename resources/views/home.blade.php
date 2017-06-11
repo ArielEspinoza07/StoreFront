@@ -30,15 +30,21 @@
                 <template slot="address">@{{ store.address }}</template>
                 <template slot="id">@{{ store.id }}</template>
                 <template slot="actions">
-                    <a :href="'/store/'+store.id">Show Store</a>
+                    <a :href="'/store/'+store.id"><i class="tiny material-icons left">store</i>Show Store</a>
                 </template>
             </store-component>
         </div>
 
-        <div class="fixed-action-btn">
-            <a class="btn-floating btn-large teal lighten-1" href="#create-store">
-                <i class="large material-icons">mode_edit</i>
+        <div class="fixed-action-btn click-to-toggle">
+            <a class="btn-floating btn-large teal lighten-1" >
+                <i class="large material-icons">store</i>
             </a>
+            <ul>
+                <li><a class="btn-floating green lighten-1" href="#create-store"><i class="material-icons">insert_invitation</i></a></li>
+                {{--<li><a class="btn-floating teal lighten-1" href="#create-article"><i class="material-icons">note_add</i></a></li>--}}
+                {{--<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>--}}
+                {{--<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>--}}
+            </ul>
         </div>
     </div>
 @endsection

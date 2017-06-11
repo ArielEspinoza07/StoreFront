@@ -25,5 +25,10 @@ Route::group(['prefix'  =>  'stores'],function(){
 });
 
 Route::group(['prefix'  =>  'store'],function(){
-    Route::get('/{id}'              , ['as'   => 'stores.show'       ,'uses'    =>  'StoreController@showStore']);
+    Route::get('/{id}'                              , ['as'   => 'storesBack.show'          ,'uses'    =>  'StoreController@showStore']);
+    Route::post('/{id}'                             , ['as'   => 'storesBack.update'        ,'uses'    =>  'StoreController@updateStore']);
+    Route::get('/{id}/delete'                       , ['as'   => 'storesBack.delete'        ,'uses'    =>  'StoreController@deleteStore']);
+    Route::post('/{id}/article'                     , ['as'   => 'storesBack.article'       ,'uses'    =>  'StoreController@addArticleStore']);
+    Route::post('/{id}/article/{articleId}'         , ['as'   => 'storesBack.article'       ,'uses'    =>  'StoreController@updateArticleStore']);
+    Route::get('/{id}/article/{articleId}/delete'   , ['as'   => 'storesBack.article'       ,'uses'    =>  'StoreController@deleteArticleStore']);
 });

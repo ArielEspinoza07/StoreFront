@@ -809,6 +809,7 @@ module.exports = function normalizeComponent (
 // require('./axios');
 window.Vue = __webpack_require__(34);
 window.axios = __webpack_require__(10);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -823,9 +824,7 @@ var app = new Vue({
 
     data: {
         stores: [],
-        articles: [],
-        newStore: {},
-        newArticle: {}
+        newStore: {}
     },
 
     created: function created() {
@@ -836,7 +835,6 @@ var app = new Vue({
         getStoresApi: function getStoresApi() {
             axios.get('/stores').then(function (response) {
                 app.stores = response.data.stores;
-                console.log('Successfully');
             }).catch(function (error) {
                 console.log(error);
             });
@@ -1943,7 +1941,7 @@ var Component = __webpack_require__(7)(
   /* cssModules */
   null
 )
-Component.options.__file = "/var/www/Projects/StoreFront/resources/assets/js/components/Example.vue"
+Component.options.__file = "C:\\www\\StoreFront\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -1977,7 +1975,7 @@ var Component = __webpack_require__(7)(
   /* cssModules */
   null
 )
-Component.options.__file = "/var/www/Projects/StoreFront/resources/assets/js/components/store.vue"
+Component.options.__file = "C:\\www\\StoreFront\\resources\\assets\\js\\components\\store.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] store.vue: functional components are not supported with templates, they should use render functions.")}
 
